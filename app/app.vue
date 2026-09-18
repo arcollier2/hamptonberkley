@@ -2,7 +2,7 @@
   <NuxtRouteAnnouncer />
   <UApp>
     <SiteHeader />
-    <main>
+    <main class="bg-muted">
       <NuxtPage />
     </main>
     <SiteFooter />

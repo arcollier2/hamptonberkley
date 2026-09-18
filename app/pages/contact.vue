@@ -32,7 +32,10 @@ async function submit() {
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        ...form,
+        guestCount: form.guestCount ? Number(form.guestCount) : null,
+      }),
     })
     const body = (await response.json()) as {
       accepted?: boolean

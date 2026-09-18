@@ -9,7 +9,7 @@ const links = [
 </script>
 
 <template>
-  <UHeader class="bg-default/90 backdrop-blur">
+  <UHeader class="bg-muted">
     <template #title>
       <NuxtLink to="/" class="font-serif text-2xl font-semibold tracking-wide">
         Hampton Berkley

@@ -37,7 +37,16 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: "en" },
       link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
       meta: [
-        { name: "theme-color", content: "#f7f3ed" },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: light)",
+          content: "#fcfaf3",
+        },
+        {
+          name: "theme-color",
+          media: "(prefers-color-scheme: dark)",
+          content: "#21282e",
+        },
         { property: "og:site_name", content: "Hampton Berkley" },
         { property: "og:locale", content: "en_US" },
       ],

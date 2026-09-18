@@ -14,9 +14,22 @@ type ValidationResult =
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/
+const PHONE_PATTERN = /^[+\d().\-\s]+$/
 
 function field(value: unknown): string {
   return typeof value === "string" ? value.trim() : ""
+}
+
+function numericField(value: unknown): number | null {
+  if (value === null || value === undefined || value === "") {
+    return null
+  }
+
+  if (typeof value === "number") {
+    return value
+  }
+
+  return typeof value === "string" && value.trim() ? Number(value.trim()) : Number.NaN
 }
 
 export function validateContactSubmission(input: unknown): ValidationResult {
@@ -31,8 +44,7 @@ export function validateContactSubmission(input: unknown): ValidationResult {
   const eventDate = field(values.eventDate)
   const message = field(values.message)
   const website = field(values.website)
-  const guestCountValue = field(values.guestCount)
-  const guestCount = guestCountValue ? Number(guestCountValue) : null
+  const guestCount = numericField(values.guestCount)
   const errors: Record<string, string> = {}
 
   if (name.length < 2 || name.length > 100) {
@@ -41,8 +53,15 @@ export function validateContactSubmission(input: unknown): ValidationResult {
   if (!EMAIL_PATTERN.test(email) || email.length > 254) {
     errors.email = "Enter a valid email address."
   }
-  if (phone.length > 30) {
-    errors.phone = "Enter a phone number no longer than 30 characters."
+  const phoneDigitCount = phone.replace(/\D/g, "").length
+  if (
+    phone &&
+    (phone.length > 30 ||
+      !PHONE_PATTERN.test(phone) ||
+      phoneDigitCount < 7 ||
+      phoneDigitCount > 15)
+  ) {
+    errors.phone = "Enter a valid phone number."
   }
   if (eventDate && !DATE_PATTERN.test(eventDate)) {
     errors.eventDate = "Enter a date in YYYY-MM-DD format."

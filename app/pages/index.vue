@@ -16,11 +16,8 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
 <template>
   <div>
     <section class="relative overflow-hidden border-b border-default bg-muted">
-      <div
-        class="absolute inset-0 opacity-60 [background:radial-gradient(circle_at_80%_20%,var(--ui-color-primary-100),transparent_38%)] dark:opacity-15"
-      />
       <UContainer
-        class="relative grid min-h-[72vh] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]"
+        class="grid min-h-[72vh] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]"
       >
         <div class="max-w-3xl">
           <p
@@ -45,10 +42,10 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
           </div>
         </div>
         <div
-          class="aspect-[4/5] rounded-t-full border border-default bg-elevated p-4 shadow-xl shadow-stone-950/5"
+          class="aspect-[4/5] rounded-t-full border border-default bg-elevated p-4 shadow-xl shadow-hcharcoal-950/5"
         >
           <div
-            class="flex h-full items-center justify-center rounded-t-full bg-gradient-to-b from-rose-100 to-stone-100 text-center dark:from-rose-950 dark:to-stone-900"
+            class="flex h-full items-center justify-center rounded-t-full bg-accented text-center"
           >
             <p class="max-w-xs px-8 font-serif text-3xl text-muted">
               Your photography will live here.
