@@ -1,31 +1,27 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "hampton-berkley",
-	"account_id": "4c41085c8c4dcdc4e8d0b9551878e98b",
-	"main": "workers/contact-api.ts",
-	"compatibility_date": "2026-09-18",
-	"compatibility_flags": [
-		"nodejs_compat"
-	],
-	"observability": {
-		"enabled": true,
-		"head_sampling_rate": 1,
-	},
-	"assets": {
-		"directory": "./.output/public",
-		"binding": "ASSETS",
-		"not_found_handling": "404-page",
-		"html_handling": "auto-trailing-slash",
-		"run_worker_first": [
-			"/api/*"
-		],
-	},
-	"d1_databases": [
-		{
-			"binding": "CONTACT_DB",
-			"database_name": "hampton-berkley-contact",
-			"database_id": "16a126d9-f429-453d-b440-ac6527297d86",
-			"migrations_dir": "./migrations",
-		},
-	],
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hampton-berkley",
+  "account_id": "4c41085c8c4dcdc4e8d0b9551878e98b",
+  "main": "workers/contact-api.ts",
+  "compatibility_date": "2026-09-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+  },
+  "assets": {
+    "directory": "./.output/public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*"],
+  },
+  "d1_databases": [
+    {
+      "binding": "CONTACT_DB",
+      "database_name": "hampton-berkley-contact",
+      "database_id": "16a126d9-f429-453d-b440-ac6527297d86",
+      "migrations_dir": "./migrations",
+    },
+  ],
 }
