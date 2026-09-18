@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "hampton-berkley",
+  "name": "hamptonberkley",
   "account_id": "4c41085c8c4dcdc4e8d0b9551878e98b",
   "main": "workers/contact-api.ts",
   "compatibility_date": "2026-09-18",
