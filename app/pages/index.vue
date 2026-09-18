@@ -53,7 +53,7 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
 <template>
   <div>
     <section class="bg-muted">
-      <UContainer class="overflow-hidden border-b border-default px-0 sm:px-0 lg:px-0">
+      <UContainer class="overflow-hidden px-0 sm:px-0 lg:px-0">
         <div class="grid lg:grid-cols-[0.43fr_0.57fr]">
           <div
             class="flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-12 lg:py-16 xl:px-16"
@@ -103,24 +103,24 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
             />
           </div>
         </div>
-
-        <nav
-          aria-label="Services"
-          class="flex overflow-x-auto border-t border-hblue-300 bg-hblue-200 dark:border-hblue-800 dark:bg-hblue-950"
-        >
-          <NuxtLink
-            v-for="service in serviceLinks"
-            :key="service.label"
-            :to="service.to"
-            class="min-w-44 flex-1 border-l border-hblue-300 px-5 py-6 text-center text-xs font-semibold tracking-[0.18em] text-hcharcoal-800 uppercase first:border-l-0 hover:bg-hblue-300/50 dark:border-hblue-800 dark:text-hblue-100 dark:hover:bg-hblue-900/50"
-          >
-            {{ service.label }}
-          </NuxtLink>
-        </nav>
       </UContainer>
+
+      <nav
+        aria-label="Services"
+        class="hidden overflow-x-auto border-y border-hblue-300 bg-hblue-200 md:flex dark:border-hblue-800 dark:bg-hblue-950"
+      >
+        <NuxtLink
+          v-for="service in serviceLinks"
+          :key="service.label"
+          :to="service.to"
+          class="min-w-44 flex-1 border-l border-hblue-300 px-5 py-6 text-center text-xs font-semibold tracking-[0.18em] text-hcharcoal-800 uppercase first:border-l-0 hover:bg-hblue-300/50 dark:border-hblue-800 dark:text-hblue-100 dark:hover:bg-hblue-900/50"
+        >
+          {{ service.label }}
+        </NuxtLink>
+      </nav>
     </section>
 
-    <UContainer class="space-y-24 py-24 sm:py-32">
+    <UContainer class="py-24 sm:py-32">
       <section>
         <div class="mb-8 flex items-end justify-between gap-6">
           <p class="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
@@ -157,9 +157,11 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
           </article>
         </div>
       </section>
+    </UContainer>
 
-      <section
-        class="scalloped-paper grid items-center gap-6 bg-hpink-200 px-6 py-10 text-center text-hcharcoal-900 sm:px-12 sm:py-12 lg:grid-cols-[1fr_auto] lg:text-left"
+    <section class="scalloped-paper bg-hpink-200 text-hcharcoal-900">
+      <UContainer
+        class="grid items-center gap-6 px-6 py-10 text-center sm:px-12 sm:py-12 lg:grid-cols-[1fr_auto] lg:text-left"
       >
         <div class="lg:text-center">
           <p class="text-[0.65rem] font-semibold tracking-[0.22em] uppercase">
@@ -181,7 +183,7 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
         >
           Inquire now
         </UButton>
-      </section>
-    </UContainer>
+      </UContainer>
+    </section>
   </div>
 </template>
