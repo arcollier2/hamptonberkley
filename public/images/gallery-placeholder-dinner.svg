@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">Abstract table setting gallery placeholder</title>
+  <rect width="1200" height="900" fill="#e5d8ca"/>
+  <ellipse cx="600" cy="500" rx="460" ry="230" fill="#f8f5ef"/>
+  <circle cx="600" cy="500" r="155" fill="#c7a9a0"/>
+  <path d="M140 235h920v36H140zM220 165h28v560h-28zm732 0h28v560h-28z" fill="#88756a"/>
+</svg>

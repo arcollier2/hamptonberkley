@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title">
+  <title id="title">Abstract floral gallery placeholder</title>
+  <rect width="1200" height="900" fill="#eee7de"/>
+  <circle cx="350" cy="430" r="260" fill="#d8bbb4"/>
+  <circle cx="820" cy="390" r="300" fill="#b8c1aa"/>
+  <path d="M0 780C220 630 420 690 610 590s390-30 590-170v480H0z" fill="#f7f3ed"/>
+</svg>

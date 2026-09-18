@@ -1,0 +1,69 @@
+{
+  "name": "hampton-berkley",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "nuxt prepare",
+    "prepare": "husky",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "prettier --check . && eslint . && markdownlint-cli2",
+    "lint:fix": "prettier --write . && eslint . --fix && markdownlint-cli2 --fix",
+    "typecheck": "wrangler types --check && nuxt typecheck && tsc -p workers/tsconfig.json",
+    "test": "vitest run",
+    "test:e2e": "bun run generate && playwright test",
+    "test:e2e:install": "playwright install --with-deps chromium",
+    "cf:types": "wrangler types",
+    "cf:dev": "bun run generate && wrangler dev",
+    "cf:deploy": "bun run generate && wrangler deploy",
+    "cf:deploy:dry": "bun run generate && wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.15.2",
+    "@nuxt/image": "2.1.0",
+    "@nuxt/ui": "^4.10.0",
+    "@nuxtjs/google-fonts": "3.2.0",
+    "better-sqlite3": "^13.0.3",
+    "nuxt": "^4.5.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260820.1",
+    "@iconify-json/lucide": "^1.2.124",
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/test-utils": "^4.1.0",
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "happy-dom": "^20.11.6",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "markdownlint-cli2": "^0.23.2",
+    "prettier": "^3.9.6",
+    "serve": "^14.2.6",
+    "vitest": "^4.1.11",
+    "vue-tsc": "^3.3.10",
+    "wrangler": "^4.124.0"
+  },
+  "trustedDependencies": [
+    "unrs-resolver"
+  ],
+  "lint-staged": {
+    "*.{js,ts,mjs,cjs,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml,css}": [
+      "prettier --write"
+    ],
+    "*.{md,mdx}": [
+      "markdownlint-cli2 --fix"
+    ]
+  }
+}

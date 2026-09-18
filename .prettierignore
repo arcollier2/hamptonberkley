@@ -1,0 +1,14 @@
+.github
+node_modules
+.nuxt
+.output
+dist
+.wrangler
+.data
+coverage
+playwright-report
+test-results
+bun.lock
+worker-configuration.d.ts
+content/
+*.md
