@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test"
 
 const pages = [
-  { path: "/", heading: "A celebration that feels entirely like you." },
+  { path: "/", heading: "Intentional Gatherings, Genuinely Made" },
   { path: "/services", heading: "Support shaped around your celebration" },
   { path: "/gallery", heading: "The gallery" },
   { path: "/about", heading: "Planning with purpose" },
@@ -20,7 +20,7 @@ test("header navigation exposes every primary route", async ({ page }) => {
   await page.goto("/")
   const nav = page.getByRole("navigation").first()
 
-  for (const label of ["Services", "Gallery", "About", "Contact"]) {
+  for (const label of ["Services", "Weddings", "About", "Contact"]) {
     await expect(nav.getByRole("link", { name: label, exact: true })).toBeVisible()
   }
 })

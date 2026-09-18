@@ -63,9 +63,9 @@
   --ui-text-highlighted: #202c35;
   --ui-text-inverted: #fcfaf3;
 
-  --ui-bg: #fcfaf3;
-  --ui-bg-muted: #f4f2e9;
-  --ui-bg-elevated: #fffef9;
+  --ui-bg: #fffef9;
+  --ui-bg-muted: #fffef9;
+  --ui-bg-elevated: #ffffff;
   --ui-bg-accented: #e1eeff;
 
   --ui-border: #d5dde0;
@@ -103,4 +103,36 @@ body {
 
 ::selection {
   background: color-mix(in srgb, var(--ui-primary) 25%, transparent);
+}
+
+.scalloped-paper {
+  position: relative;
+  isolation: isolate;
+}
+
+.scalloped-paper::before,
+.scalloped-paper::after {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  left: 0;
+  height: 48px;
+  background: var(--ui-bg-muted);
+  content: "";
+  mask: url("/images/scallop-tile.png") repeat-x 0 0 / 47px 48px;
+  -webkit-mask: url("/images/scallop-tile.png") repeat-x 0 0 / 47px 48px;
+}
+
+.scalloped-paper::before {
+  top: 0;
+  transform: scaleY(-1);
+}
+
+.scalloped-paper::after {
+  bottom: 0;
+}
+
+.scalloped-paper > * {
+  position: relative;
+  z-index: 1;
 }

@@ -1,11 +1,48 @@
 <script setup lang="ts">
+const serviceLinks = [
+  { label: "Weddings", to: "/gallery" },
+  { label: "Bridal events", to: "/services" },
+  { label: "Social events", to: "/services" },
+  { label: "Corporate events", to: "/services" },
+]
+
+const services = [
+  {
+    title: "Wedding Planning",
+    items: ["Full-Service Planning", "Partial Planning", "Day-Of Coordination"],
+    class: "bg-hgreen-300 text-hcharcoal-900",
+  },
+  {
+    title: "Bridal Events",
+    items: ["Showers", "Bachelorette Trips", "Rehearsal Dinners", "Welcome Dinners"],
+    class: "bg-hcharcoal-800 text-hcharcoal-50",
+  },
+  {
+    title: "Social Events",
+    items: [
+      "Engagement Parties",
+      "Baby Showers",
+      "Private Gatherings",
+      "Milestone Celebrations",
+    ],
+    class: "bg-hblue-200 text-hcharcoal-900",
+  },
+  {
+    title: "Corporate Events",
+    items: ["Executive Dinners", "Team Building", "Retreats", "Elevated Experiences"],
+    class: "bg-hpink-200 text-hcharcoal-900",
+  },
+]
+
 const canonicalUrl = new URL("/", useSiteUrl()).toString()
 
 useSeoMeta({
-  title: "Hampton Berkley | Wedding planning",
-  description: "Thoughtful wedding planning and event organization.",
-  ogTitle: "Hampton Berkley",
-  ogDescription: "Thoughtful wedding planning and event organization.",
+  title: "Hampton Berkley Co. | Intentional gatherings",
+  description:
+    "Thoughtfully planned, beautifully designed weddings and events across Northern Indiana and Greater Indianapolis.",
+  ogTitle: "Hampton Berkley Co.",
+  ogDescription:
+    "Thoughtfully planned, beautifully designed weddings and events across Northern Indiana and Greater Indianapolis.",
   ogUrl: canonicalUrl,
   ogType: "website",
 })
@@ -15,83 +52,135 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
 
 <template>
   <div>
-    <section class="relative overflow-hidden border-b border-default bg-muted">
-      <UContainer
-        class="grid min-h-[72vh] items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr]"
-      >
-        <div class="max-w-3xl">
-          <p
-            class="mb-5 text-sm font-semibold tracking-[0.24em] text-primary uppercase"
-          >
-            Wedding planning & organization
-          </p>
-          <h1
-            class="font-serif text-6xl leading-[0.95] font-semibold text-balance sm:text-7xl lg:text-8xl"
-          >
-            A celebration that feels entirely like you.
-          </h1>
-          <p class="mt-7 max-w-xl text-lg leading-8 text-muted">
-            Hampton Berkley brings calm, clarity, and considered detail to every stage
-            of your wedding.
-          </p>
-          <div class="mt-9 flex flex-wrap gap-3">
-            <UButton to="/contact" size="xl">Begin your plans</UButton>
-            <UButton to="/gallery" size="xl" color="neutral" variant="outline">
-              View the gallery
-            </UButton>
-          </div>
-        </div>
-        <div
-          class="aspect-[4/5] rounded-t-full border border-default bg-elevated p-4 shadow-xl shadow-hcharcoal-950/5"
-        >
+    <section class="bg-muted">
+      <UContainer class="overflow-hidden border-b border-default px-0 sm:px-0 lg:px-0">
+        <div class="grid lg:grid-cols-[0.43fr_0.57fr]">
           <div
-            class="flex h-full items-center justify-center rounded-t-full bg-accented text-center"
+            class="flex flex-col justify-center px-6 py-14 sm:px-10 lg:px-12 lg:py-16 xl:px-16"
           >
-            <p class="max-w-xs px-8 font-serif text-3xl text-muted">
-              Your photography will live here.
+            <p
+              class="mb-4 text-xs font-semibold tracking-[0.24em] text-toned uppercase"
+            >
+              Planning meaningful moments
+            </p>
+            <h1
+              class="max-w-xl font-serif text-5xl leading-[0.98] font-semibold text-balance sm:text-6xl xl:text-7xl"
+            >
+              Intentional Gatherings, Genuinely Made
+            </h1>
+            <p class="mt-6 max-w-lg leading-7 text-muted">
+              Thoughtfully planned, beautifully designed events that bring people
+              together. From “I do” to corporate gatherings and everything in between,
+              we make your vision a reality.
+            </p>
+            <div class="mt-8">
+              <UButton
+                to="/services"
+                size="lg"
+                color="neutral"
+                trailing-icon="i-lucide-arrow-right"
+                class="bg-hgreen-300 tracking-[0.12em] text-hcharcoal-950 uppercase hover:bg-hgreen-400"
+              >
+                Explore our services
+              </UButton>
+            </div>
+            <p
+              class="mt-7 text-[0.65rem] font-semibold tracking-[0.22em] text-toned uppercase"
+            >
+              People / Places / Meaningful Moments
             </p>
           </div>
+
+          <div class="relative min-h-[360px] sm:min-h-[460px] lg:min-h-[560px]">
+            <img
+              src="/images/02192.jpg"
+              alt="Two Hampton Berkley planners holding notebooks and a blue HB portfolio"
+              width="2579"
+              height="1711"
+              loading="eager"
+              fetchpriority="high"
+              class="absolute inset-0 size-full object-cover object-center"
+            />
+          </div>
         </div>
+
+        <nav
+          aria-label="Services"
+          class="flex overflow-x-auto border-t border-hblue-300 bg-hblue-200 dark:border-hblue-800 dark:bg-hblue-950"
+        >
+          <NuxtLink
+            v-for="service in serviceLinks"
+            :key="service.label"
+            :to="service.to"
+            class="min-w-44 flex-1 border-l border-hblue-300 px-5 py-6 text-center text-xs font-semibold tracking-[0.18em] text-hcharcoal-800 uppercase first:border-l-0 hover:bg-hblue-300/50 dark:border-hblue-800 dark:text-hblue-100 dark:hover:bg-hblue-900/50"
+          >
+            {{ service.label }}
+          </NuxtLink>
+        </nav>
       </UContainer>
     </section>
 
     <UContainer class="space-y-24 py-24 sm:py-32">
-      <section class="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-        <SectionHeading
-          eyebrow="Our approach"
-          title="Beautifully organized. Deeply personal."
-          description="From the first idea to the final farewell, every decision is shaped around your priorities, your people, and the experience you want to share."
-        />
-        <div class="grid gap-5 sm:grid-cols-2">
-          <UCard>
-            <UIcon name="i-lucide-calendar-heart" class="mb-5 size-7 text-primary" />
-            <h3 class="font-serif text-2xl font-semibold">Full planning</h3>
-            <p class="mt-3 text-muted">
-              End-to-end guidance for a cohesive, carefully managed celebration.
-            </p>
-          </UCard>
-          <UCard>
-            <UIcon name="i-lucide-sparkles" class="mb-5 size-7 text-primary" />
-            <h3 class="font-serif text-2xl font-semibold">Event design</h3>
-            <p class="mt-3 text-muted">
-              A visual direction that ties every thoughtful detail together.
-            </p>
-          </UCard>
+      <section>
+        <div class="mb-8 flex items-end justify-between gap-6">
+          <p class="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+            Our services
+          </p>
+          <NuxtLink
+            to="/services"
+            class="hidden items-center gap-2 text-xs font-semibold tracking-[0.18em] text-toned uppercase hover:text-primary sm:flex"
+          >
+            View all services
+            <UIcon name="i-lucide-arrow-right" class="size-4" />
+          </NuxtLink>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article
+            v-for="service in services"
+            :key="service.title"
+            class="flex min-h-80 flex-col rounded-xl p-7"
+            :class="service.class"
+          >
+            <h2 class="font-serif text-3xl font-semibold">{{ service.title }}</h2>
+            <ul class="mt-6 space-y-2 text-sm leading-5">
+              <li v-for="item in service.items" :key="item">{{ item }}</li>
+            </ul>
+            <span class="mt-auto block h-px w-10 bg-current opacity-50" />
+            <NuxtLink
+              to="/services"
+              class="mt-6 flex items-center gap-2 text-xs font-semibold tracking-[0.16em] uppercase"
+            >
+              Learn more
+              <UIcon name="i-lucide-arrow-right" class="size-4" />
+            </NuxtLink>
+          </article>
         </div>
       </section>
 
       <section
-        class="rounded-3xl bg-elevated px-6 py-16 text-center shadow-sm sm:px-12"
+        class="scalloped-paper grid items-center gap-6 bg-hpink-200 px-6 py-10 text-center text-hcharcoal-900 sm:px-12 sm:py-12 lg:grid-cols-[1fr_auto] lg:text-left"
       >
-        <SectionHeading
-          eyebrow="Start a conversation"
-          title="Tell us what you are imagining."
-          description="Share a few details and we will be in touch about the next steps."
-          class="mx-auto"
-        />
-        <UButton to="/contact" size="xl" class="mt-8"
-          >Plan with Hampton Berkley</UButton
+        <div class="lg:text-center">
+          <p class="text-[0.65rem] font-semibold tracking-[0.22em] uppercase">
+            Let’s create something meaningful
+          </p>
+          <h2 class="mt-2 font-serif text-3xl font-semibold sm:text-4xl">
+            Ready to Plan a More Present Day?
+          </h2>
+          <p class="mx-auto mt-2 max-w-2xl text-sm leading-6">
+            We’d love to learn more about your celebration and how we can support you.
+            Let’s create a day that feels organized, meaningful, and beautifully hosted.
+          </p>
+        </div>
+        <UButton
+          to="/contact"
+          size="xl"
+          color="neutral"
+          class="justify-self-center bg-hblue-200 px-10 tracking-[0.14em] text-hcharcoal-950 uppercase hover:bg-hblue-300 lg:justify-self-end"
         >
+          Inquire now
+        </UButton>
       </section>
     </UContainer>
   </div>
