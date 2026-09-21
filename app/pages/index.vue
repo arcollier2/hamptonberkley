@@ -122,18 +122,12 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
 
     <UContainer class="py-24 sm:py-32">
       <section>
-        <div class="mb-8 flex items-end justify-between gap-6">
-          <p class="text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-            Our services
-          </p>
-          <NuxtLink
-            to="/services"
-            class="hidden items-center gap-2 text-xs font-semibold tracking-[0.18em] text-toned uppercase hover:text-primary sm:flex"
-          >
-            View all services
-            <UIcon name="i-lucide-arrow-right" class="size-4" />
-          </NuxtLink>
-        </div>
+        <SectionDivider
+          label="Our services"
+          link-label="View all services"
+          to="/services"
+          class="mb-8"
+        />
 
         <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           <article
@@ -159,31 +153,12 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
       </section>
     </UContainer>
 
-    <section class="scalloped-paper bg-hpink-200 text-hcharcoal-900">
-      <UContainer
-        class="grid items-center gap-6 px-6 py-10 text-center sm:px-12 sm:py-12 lg:grid-cols-[1fr_auto] lg:text-left"
-      >
-        <div class="lg:text-center">
-          <p class="text-[0.65rem] font-semibold tracking-[0.22em] uppercase">
-            Let’s create something meaningful
-          </p>
-          <h2 class="mt-2 font-serif text-3xl font-semibold sm:text-4xl">
-            Ready to Plan a More Present Day?
-          </h2>
-          <p class="mx-auto mt-2 max-w-2xl text-sm leading-6">
-            We’d love to learn more about your celebration and how we can support you.
-            Let’s create a day that feels organized, meaningful, and beautifully hosted.
-          </p>
-        </div>
-        <UButton
-          to="/contact"
-          size="xl"
-          color="neutral"
-          class="justify-self-center bg-hblue-200 px-10 tracking-[0.14em] text-hcharcoal-950 uppercase hover:bg-hblue-300 lg:justify-self-end"
-        >
-          Inquire now
-        </UButton>
-      </UContainer>
-    </section>
+    <ScallopedCta
+      eyebrow="Let’s create something meaningful"
+      heading="Ready to Plan a More Present Day?"
+      content="We’d love to learn more about your celebration and how we can support you. Let’s create a day that feels organized, meaningful, and beautifully hosted."
+      button-text="Inquire now"
+      button-to="/contact"
+    />
   </div>
 </template>

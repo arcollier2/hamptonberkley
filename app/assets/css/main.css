@@ -107,32 +107,44 @@ body {
 
 .scalloped-paper {
   position: relative;
+  padding-block: 48px;
+  background: var(--ui-bg-muted);
+}
+
+.scalloped-paper__fill {
+  position: relative;
   isolation: isolate;
 }
 
-.scalloped-paper::before,
-.scalloped-paper::after {
+.scalloped-paper__fill::before,
+.scalloped-paper__fill::after {
   position: absolute;
   z-index: 0;
   right: 0;
   left: 0;
   height: 48px;
-  background: var(--ui-bg-muted);
+  background: inherit;
   content: "";
-  mask: url("/images/scallop-tile.png") repeat-x 0 0 / 47px 48px;
-  -webkit-mask: url("/images/scallop-tile.png") repeat-x 0 0 / 47px 48px;
+  mask-image: url("/images/scallop-tile-edge.png");
+  mask-position: center top;
+  mask-repeat: round no-repeat;
+  mask-size: 47px 48px;
+  -webkit-mask-image: url("/images/scallop-tile-edge.png");
+  -webkit-mask-position: center top;
+  -webkit-mask-repeat: round no-repeat;
+  -webkit-mask-size: 47px 48px;
 }
 
-.scalloped-paper::before {
-  top: 0;
+.scalloped-paper__fill::before {
+  top: -47px;
+}
+
+.scalloped-paper__fill::after {
+  bottom: -47px;
   transform: scaleY(-1);
 }
 
-.scalloped-paper::after {
-  bottom: 0;
-}
-
-.scalloped-paper > * {
+.scalloped-paper__fill > * {
   position: relative;
   z-index: 1;
 }

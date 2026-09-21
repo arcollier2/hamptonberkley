@@ -2,7 +2,8 @@ import { expect, test } from "@playwright/test"
 
 const pages = [
   { path: "/", heading: "Intentional Gatherings, Genuinely Made" },
-  { path: "/services", heading: "Support shaped around your celebration" },
+  { path: "/services", heading: "Wedding and event planning services" },
+  { path: "/service/wedding-coordination", heading: "Wedding Coordination" },
   { path: "/gallery", heading: "The gallery" },
   { path: "/about", heading: "Planning with purpose" },
   { path: "/contact", heading: "Let’s begin with your story." },
