@@ -32,17 +32,33 @@ async function submit() {
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        ...form,
+        guestCount: form.guestCount ? Number(form.guestCount) : null,
+      }),
     })
     const body = (await response.json()) as {
-      accepted?: boolean
-      error?: string
-      fields?: Record<string, string>
+      accepted?: unknown
+      error?: unknown
+      fields?: unknown
     }
 
-    if (!response.ok || !body.accepted) {
-      fieldErrors.value = body.fields ?? {}
-      throw new Error(body.error ?? "We could not send your inquiry.")
+    if (!response.ok || body.accepted !== true) {
+      fieldErrors.value =
+        body.fields && typeof body.fields === "object" && !Array.isArray(body.fields)
+          ? Object.fromEntries(
+              Object.entries(body.fields).filter(
+                (entry): entry is [string, string] => typeof entry[1] === "string"
+              )
+            )
+          : {}
+
+      const fallbackMessage =
+        import.meta.dev && response.status === 404
+          ? "Contact submissions require the Cloudflare preview. Run bun run cf:dev."
+          : "We could not send your inquiry."
+
+      throw new Error(typeof body.error === "string" ? body.error : fallbackMessage)
     }
 
     submitted.value = true

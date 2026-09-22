@@ -6,8 +6,9 @@ describe("validateContactSubmission", () => {
     const result = validateContactSubmission({
       name: "  Avery Morgan ",
       email: " AVERY@EXAMPLE.COM ",
+      phone: "(317) 999-5589",
       message: "We would love help planning our wedding.",
-      guestCount: "120",
+      guestCount: 120,
     })
 
     expect(result).toEqual({
@@ -15,7 +16,7 @@ describe("validateContactSubmission", () => {
       data: {
         name: "Avery Morgan",
         email: "avery@example.com",
-        phone: null,
+        phone: "(317) 999-5589",
         eventDate: null,
         guestCount: 120,
         message: "We would love help planning our wedding.",
@@ -28,6 +29,7 @@ describe("validateContactSubmission", () => {
     const result = validateContactSubmission({
       name: "A",
       email: "not-an-email",
+      phone: "josh",
       message: "short",
       guestCount: "0",
     })
@@ -37,9 +39,24 @@ describe("validateContactSubmission", () => {
       expect(result.errors).toMatchObject({
         name: expect.any(String),
         email: expect.any(String),
+        phone: expect.any(String),
         guestCount: expect.any(String),
         message: expect.any(String),
       })
+    }
+  })
+
+  it("accepts guest counts submitted as strings", () => {
+    const result = validateContactSubmission({
+      name: "Avery Morgan",
+      email: "avery@example.com",
+      message: "We would love help planning our wedding.",
+      guestCount: "85",
+    })
+
+    expect(result.success).toBe(true)
+    if (result.success) {
+      expect(result.data.guestCount).toBe(85)
     }
   })
 })

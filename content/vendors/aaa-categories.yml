@@ -1,0 +1,19 @@
+categories:
+  - id: florists
+    label: Florists
+  - id: catering
+    label: Catering
+  - id: desserts
+    label: Desserts
+  - id: rentals
+    label: Rentals
+  - id: photography
+    label: Photography
+  - id: videography
+    label: Videography
+  - id: djs
+    label: DJs
+  - id: beauty
+    label: Beauty
+  - id: other
+    label: Other

@@ -10,11 +10,50 @@ serves those assets and runs `workers/contact-api.ts` first for `/api/*`.
 
 - `content/pages/*.md` contains prose pages served at root-level routes.
 - `content/gallery/*.yml` contains gallery entries.
+- `content/vendors/aaa-categories.yml` defines vendor categories and display order.
+- Other `content/vendors/*.yml` files contain one approved vendor each.
 - `app/pages/gallery.vue` renders the gallery.
+- `app/pages/vendors.vue` renders and filters approved vendors.
 - `app/pages/[...slug].vue` renders prose pages.
 
 Gallery entries require `title`, `description`, `image`, and `imageAlt`. Optional
 fields are `location` and `services`; `order` controls display order.
+
+### Approved vendors
+
+Vendor files require `name` and a `categories` list. Categories must use IDs
+defined in `content/vendors/aaa-categories.yml`. The optional fields are
+`tagline`, `instagram`, `website`, `email`, and `featured`.
+
+Use a YAML list when a vendor belongs to multiple categories:
+
+```yaml
+name: Example Vendor
+categories:
+  - florists
+  - rentals
+tagline: Optional short description.
+instagram: examplevendor
+website: https://example.com
+email: hello@example.com
+featured: false
+```
+
+Enter an Instagram handle without `@` or a URL. Website values must include
+`https://`. Missing optional fields are not rendered. Featured vendors appear
+first; all other vendors are sorted alphabetically, so no manual order values
+are required.
+
+To add a vendor through GitHub:
+
+1. Open `content/vendors` and duplicate an existing vendor file.
+2. Rename it with lowercase words separated by hyphens.
+3. Update its values and choose category IDs from `aaa-categories.yml`.
+4. Commit the file to `main`.
+
+CI checks YAML formatting, validates the typed Nuxt Content schema, generates
+the static site, and runs browser smoke tests before `main` can be promoted to
+`prod`. Run `bun run lint:yaml` locally to check vendor YAML formatting.
 
 ## Contact form and D1
 

@@ -1,10 +1,12 @@
 import { expect, test } from "@playwright/test"
 
 const pages = [
-  { path: "/", heading: "A celebration that feels entirely like you." },
-  { path: "/services", heading: "Support shaped around your celebration" },
+  { path: "/", heading: "Intentional Gatherings, Genuinely Made" },
+  { path: "/services", heading: "Wedding and event planning services" },
+  { path: "/service/wedding-coordination", heading: "Wedding Coordination" },
   { path: "/gallery", heading: "The gallery" },
-  { path: "/about", heading: "Planning with purpose" },
+  { path: "/about", heading: "Two roommates. Two streets. One big dream." },
+  { path: "/vendors", heading: "Trusted Creatives for Meaningful Moments" },
   { path: "/contact", heading: "Let’s begin with your story." },
 ]
 
@@ -16,11 +18,18 @@ for (const entry of pages) {
   })
 }
 
+test("vendors All view includes an approved vendor", async ({ page }) => {
+  await page.goto("/vendors")
+
+  await expect(page.getByRole("heading", { name: "The Petal Theory" })).toBeVisible()
+  await expect(page.getByText("Florists", { exact: true }).last()).toBeVisible()
+})
+
 test("header navigation exposes every primary route", async ({ page }) => {
   await page.goto("/")
   const nav = page.getByRole("navigation").first()
 
-  for (const label of ["Services", "Gallery", "About", "Contact"]) {
+  for (const label of ["Services", "Gallery", "Vendors", "About", "Contact"]) {
     await expect(nav.getByRole("link", { name: label, exact: true })).toBeVisible()
   }
 })

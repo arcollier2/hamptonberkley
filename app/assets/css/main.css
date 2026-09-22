@@ -4,21 +4,93 @@
 @theme static {
   --font-sans: "DM Sans", system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  --color-hblue-50: #f7fbff;
+  --color-hblue-100: #eff6ff;
+  --color-hblue-200: #e1eeff;
+  --color-hblue-300: #c3ddf7;
+  --color-hblue-400: #97bee2;
+  --color-hblue-500: #466684;
+  --color-hblue-600: #3d5870;
+  --color-hblue-700: #354b60;
+  --color-hblue-800: #2e404f;
+  --color-hblue-900: #293843;
+  --color-hblue-950: #19242d;
+
+  --color-hgreen-50: #f8f9ef;
+  --color-hgreen-100: #eff2d9;
+  --color-hgreen-200: #e0e5b1;
+  --color-hgreen-300: #cbd37d;
+  --color-hgreen-400: #a9b749;
+  --color-hgreen-500: #596526;
+  --color-hgreen-600: #4d5722;
+  --color-hgreen-700: #424a20;
+  --color-hgreen-800: #39401d;
+  --color-hgreen-900: #32381b;
+  --color-hgreen-950: #20250e;
+
+  --color-hpink-50: #fff9f8;
+  --color-hpink-100: #fff0ef;
+  --color-hpink-200: #ffe1df;
+  --color-hpink-300: #ffc4c0;
+  --color-hpink-400: #fa9993;
+  --color-hpink-500: #ef7069;
+  --color-hpink-600: #d84f48;
+  --color-hpink-700: #b53c36;
+  --color-hpink-800: #963531;
+  --color-hpink-900: #7d322f;
+  --color-hpink-950: #441715;
+
+  --color-hcharcoal-50: #f5f6f7;
+  --color-hcharcoal-100: #e7eaec;
+  --color-hcharcoal-200: #cdd3d7;
+  --color-hcharcoal-300: #a4afb6;
+  --color-hcharcoal-400: #78868f;
+  --color-hcharcoal-500: #5d6a73;
+  --color-hcharcoal-600: #4a555d;
+  --color-hcharcoal-700: #3d464d;
+  --color-hcharcoal-800: #30383f;
+  --color-hcharcoal-900: #21282e;
+  --color-hcharcoal-950: #12171b;
 }
 
 :root,
 .light {
-  --ui-bg: #fdfcf9;
-  --ui-bg-muted: #f7f3ed;
+  --ui-text-dimmed: #71808b;
+  --ui-text-muted: #5e6d78;
+  --ui-text-toned: #465762;
+  --ui-text: #21282e;
+  --ui-text-highlighted: #202c35;
+  --ui-text-inverted: #fcfaf3;
+
+  --ui-bg: #fffef9;
+  --ui-bg-muted: #fffef9;
   --ui-bg-elevated: #ffffff;
-  --ui-bg-accented: #eee7de;
+  --ui-bg-accented: #e1eeff;
+
+  --ui-border: #d5dde0;
+  --ui-border-muted: #e6e7e1;
+  --ui-border-accented: #bfd4e8;
+  --ui-border-inverted: #21282e;
 }
 
 .dark {
-  --ui-bg: #171311;
-  --ui-bg-muted: #211b18;
-  --ui-bg-elevated: #2a221e;
-  --ui-bg-accented: #382d28;
+  --ui-text-dimmed: #aab6be;
+  --ui-text-muted: #c3ccd1;
+  --ui-text-toned: #d8dee1;
+  --ui-text: #f2f0e9;
+  --ui-text-highlighted: #fcfaf3;
+  --ui-text-inverted: #21282e;
+
+  --ui-bg: #21282e;
+  --ui-bg-muted: #191f24;
+  --ui-bg-elevated: #2a333a;
+  --ui-bg-accented: #35414a;
+
+  --ui-border: #43515c;
+  --ui-border-muted: #343f48;
+  --ui-border-accented: #607b8f;
+  --ui-border-inverted: #fcfaf3;
 }
 
 html {
@@ -31,4 +103,48 @@ body {
 
 ::selection {
   background: color-mix(in srgb, var(--ui-primary) 25%, transparent);
+}
+
+.scalloped-paper {
+  position: relative;
+  padding-block: 48px;
+  background: var(--ui-bg-muted);
+}
+
+.scalloped-paper__fill {
+  position: relative;
+  isolation: isolate;
+}
+
+.scalloped-paper__fill::before,
+.scalloped-paper__fill::after {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  left: 0;
+  height: 48px;
+  background: inherit;
+  content: "";
+  mask-image: url("/images/scallop-tile-edge.png");
+  mask-position: center top;
+  mask-repeat: round no-repeat;
+  mask-size: 47px 48px;
+  -webkit-mask-image: url("/images/scallop-tile-edge.png");
+  -webkit-mask-position: center top;
+  -webkit-mask-repeat: round no-repeat;
+  -webkit-mask-size: 47px 48px;
+}
+
+.scalloped-paper__fill::before {
+  top: -47px;
+}
+
+.scalloped-paper__fill::after {
+  bottom: -47px;
+  transform: scaleY(-1);
+}
+
+.scalloped-paper__fill > * {
+  position: relative;
+  z-index: 1;
 }

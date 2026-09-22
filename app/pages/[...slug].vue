@@ -23,7 +23,7 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
   <UContainer v-if="page" class="py-16 sm:py-24">
     <ContentRenderer
       :value="page"
-      class="prose prose-stone dark:prose-invert mx-auto max-w-3xl prose-headings:font-serif"
+      class="prose dark:prose-invert mx-auto max-w-3xl prose-headings:font-serif"
     />
   </UContainer>
 </template>
