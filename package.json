@@ -34,13 +34,13 @@
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^5.20260820.1",
+    "@cloudflare/workers-types": "^5.20260919.1",
     "@iconify-json/lucide": "^1.2.124",
     "@nuxt/eslint": "^1.17.0",
     "@nuxt/test-utils": "^4.1.0",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/vite": "^4.3.3",
-    "eslint": "^10.8.1",
+    "eslint": "^10.11.0",
     "eslint-config-prettier": "^10.1.8",
     "happy-dom": "^20.11.6",
     "husky": "^9.1.7",
@@ -48,7 +48,7 @@
     "markdownlint-cli2": "^0.23.2",
     "prettier": "^3.9.6",
     "serve": "^14.2.6",
-    "vitest": "^4.1.11",
+    "vitest": "^5.0.1",
     "vue-tsc": "^3.3.10",
     "wrangler": "^4.124.0"
   },
