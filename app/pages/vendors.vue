@@ -47,9 +47,9 @@ const visibleVendors = computed(() =>
 )
 
 const toneClasses = [
-  "bg-hpink-100 dark:bg-hpink-950 dark:text-hpink-50",
-  "bg-hblue-100 dark:bg-hblue-950 dark:text-hblue-50",
-  "bg-hgreen-100 dark:bg-hgreen-950 dark:text-hgreen-50",
+  "bg-hpink-200 text-hcharcoal-900",
+  "bg-hblue-200 text-hcharcoal-900",
+  "bg-hgreen-300 text-hcharcoal-900",
 ]
 
 function vendorTone(id: string) {
@@ -119,10 +119,12 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
             path: '/vendors',
             query: category.id === 'all' ? {} : { category: category.id },
           }"
-          class="shrink-0 rounded-md px-5 py-2 text-[0.65rem] font-semibold tracking-[0.18em] text-toned uppercase hover:bg-accented hover:text-highlighted"
-          :class="{
-            'bg-hgreen-300 text-hcharcoal-950': selectedCategory === category.id,
-          }"
+          class="shrink-0 rounded-md px-5 py-2 text-[0.65rem] font-semibold tracking-[0.18em] uppercase"
+          :class="
+            selectedCategory === category.id
+              ? 'bg-hgreen-300 text-hcharcoal-950'
+              : 'text-toned hover:bg-accented hover:text-highlighted'
+          "
         >
           {{ category.label }}
         </NuxtLink>
