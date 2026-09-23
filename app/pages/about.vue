@@ -2,16 +2,20 @@
 const founders = [
   {
     name: "Irelynd",
-    image: "/images/irelynd-crop.png",
-    imageAlt: "Irelynd holding a blue Hampton Berkley planning portfolio",
+    image: "/images/02499.jpg",
+    imageAlt: "Irelynd seated in the Hampton Berkley studio",
+    imageWidth: 2832,
+    imageHeight: 3868,
     description:
       "Always down for a spontaneous plan, Irelynd brings the creativity, big ideas, and eye for the little details. She’s the friend who makes everything feel a little more fun.",
     traits: ["Creative", "Optimistic", "Detail-oriented"],
   },
   {
     name: "Amelia",
-    image: "/images/amelia-crop.png",
-    imageAlt: "Amelia holding a dark planning notebook",
+    image: "/images/02251.jpg",
+    imageAlt: "Amelia seated in the Hampton Berkley studio",
+    imageWidth: 2832,
+    imageHeight: 4240,
     description:
       "Amelia keeps us grounded, organized, and always thinking ahead. She brings the balance, the strategy, and a calm confidence that makes everything feel possible.",
     traits: ["Organized", "Thoughtful", "Always a plan"],
@@ -112,10 +116,10 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
             <img
               :src="founder.image"
               :alt="founder.imageAlt"
-              width="992"
-              height="1584"
+              :width="founder.imageWidth"
+              :height="founder.imageHeight"
               loading="lazy"
-              class="aspect-[31/49] size-full rounded-xl object-cover shadow-sm"
+              class="h-auto w-full rounded-xl shadow-sm"
             />
 
             <div>

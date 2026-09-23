@@ -99,12 +99,12 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
         </div>
 
         <img
-          src="/images/street-signs.png"
-          alt="Illustrated Hampton Drive and Berkley Road street signs"
-          width="1230"
-          height="1278"
+          src="/images/together.png"
+          alt="The Hampton Berkley founders standing together in their studio"
+          width="2832"
+          height="4240"
           loading="eager"
-          class="mx-auto w-full max-w-md object-contain dark:brightness-90"
+          class="mx-auto aspect-square w-full max-w-md rounded-xl object-cover object-center shadow-sm"
         />
       </section>
 

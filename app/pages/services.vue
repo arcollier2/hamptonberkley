@@ -275,17 +275,14 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
                 <UIcon name="i-lucide-arrow-right" class="size-4" />
               </NuxtLink>
             </div>
-            <picture class="min-h-64">
-              <source media="(min-width: 1280px)" srcset="/images/81444_narrow.png" />
-              <img
-                src="/images/81444.jpg"
-                alt="Two Hampton Berkley planners smiling together at an outdoor event table"
-                width="4032"
-                height="3024"
-                loading="lazy"
-                class="size-full object-cover object-right"
-              />
-            </picture>
+            <img
+              src="/images/working.png"
+              alt="Hampton Berkley planner seated against a neutral studio backdrop"
+              width="2832"
+              height="4240"
+              loading="lazy"
+              class="min-h-64 size-full object-cover object-center"
+            />
           </article>
 
           <article
@@ -321,8 +318,8 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
               </NuxtLink>
             </div>
             <img
-              src="/images/02369.jpg"
-              alt="Hampton Berkley planners reviewing event details with a blue planning portfolio"
+              src="/images/02391.jpg"
+              alt="Hampton Berkley planners working together on event details"
               width="2832"
               height="4240"
               loading="lazy"
