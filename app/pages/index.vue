@@ -1,11 +1,4 @@
 <script setup lang="ts">
-const serviceLinks = [
-  { label: "Weddings", to: "/gallery" },
-  { label: "Bridal events", to: "/services" },
-  { label: "Social events", to: "/services" },
-  { label: "Corporate events", to: "/services" },
-]
-
 const services = [
   {
     title: "Wedding Planning",
@@ -105,19 +98,41 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
         </div>
       </UContainer>
 
-      <nav
-        aria-label="Services"
-        class="hidden overflow-x-auto border-y border-hblue-300 bg-hblue-200 md:flex dark:border-hblue-800 dark:bg-hblue-950"
+      <section
+        aria-label="Our approach"
+        class="relative overflow-hidden bg-hblue-500 text-white"
       >
-        <NuxtLink
-          v-for="service in serviceLinks"
-          :key="service.label"
-          :to="service.to"
-          class="min-w-44 flex-1 border-l border-hblue-300 px-5 py-6 text-center text-xs font-semibold tracking-[0.18em] text-hcharcoal-800 uppercase first:border-l-0 hover:bg-hblue-300/50 dark:border-hblue-800 dark:text-hblue-100 dark:hover:bg-hblue-900/50"
+        <UContainer
+          class="grid items-center gap-6 px-8 pt-9 pb-14 sm:grid-cols-[auto_1fr] sm:px-12 sm:pt-11 sm:pb-16 lg:gap-10 lg:px-16"
         >
-          {{ service.label }}
-        </NuxtLink>
-      </nav>
+          <img
+            src="/images/hb_logo.svg"
+            alt=""
+            width="2000"
+            height="2000"
+            class="mx-auto size-20 shrink-0 brightness-0 invert sm:mx-0 sm:size-24"
+          />
+          <p
+            class="mx-auto max-w-4xl text-center text-sm leading-6 font-medium text-balance sm:mx-0 sm:text-left sm:text-base sm:leading-7"
+          >
+            Here at Hampton Berkley, we create beautifully organized and emotionally
+            meaningful events that bring people together while reducing stress through
+            intentional planning, hospitality, and structured execution.
+          </p>
+        </UContainer>
+
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 1440 42"
+          preserveAspectRatio="none"
+          class="absolute right-0 bottom-0 left-0 h-8 w-full text-(--ui-bg-muted) sm:h-10"
+        >
+          <path
+            d="M0 25 C330 -4 565 4 760 17 C1005 34 1215 32 1440 8 L1440 42 L0 42 Z"
+            fill="currentColor"
+          />
+        </svg>
+      </section>
     </section>
 
     <UContainer class="py-24 sm:py-32">
