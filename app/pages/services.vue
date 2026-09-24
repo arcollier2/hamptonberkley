@@ -13,13 +13,9 @@ const weddingServices: WeddingService[] = [
   {
     title: "Day-Of Coordination",
     subtitle: "Let us handle the details, so you can be present.",
-    pricing: [
-      { guests: "0–150 guests", price: "$1,000+" },
-      { guests: "150–300 guests", price: "$1,500+" },
-      { guests: "300–450+ guests", price: "$2,000+" },
-    ],
+    pricing: [1,000+],
     includes: [
-      "Final planning call 3–4 weeks before the event",
+      "Final planning call 2–3 weeks before the event",
       "Vendor communication confirmation",
       "Wedding timeline management",
       "Day-before planning and execution",
