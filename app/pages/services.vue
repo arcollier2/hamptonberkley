@@ -32,7 +32,7 @@ const weddingServices: WeddingService[] = [
   {
     title: "Partial Wedding Planning",
     subtitle: "Expert guidance, every step of the way.",
-    price: "$5,500+",
+    price: "$3,000+",
     includes: [
       "Planning support throughout engagement",
       "Vendor recommendations",
