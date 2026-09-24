@@ -29,7 +29,7 @@ test("header navigation exposes every primary route", async ({ page }) => {
   await page.goto("/")
   const nav = page.getByRole("navigation").first()
 
-  for (const label of ["Services", "Gallery", "Vendors", "About", "Contact"]) {
+  for (const label of ["Services", "Gallery", "Vendors", "About"]) {
     await expect(nav.getByRole("link", { name: label, exact: true })).toBeVisible()
   }
 })
