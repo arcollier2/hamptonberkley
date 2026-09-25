@@ -7,8 +7,8 @@ const founders = [
     imageWidth: 2832,
     imageHeight: 3868,
     description:
-      "Always down for a spontaneous plan, Irelynd brings the creativity, big ideas, and eye for the little details. She’s the friend who makes everything feel a little more fun.",
-    traits: ["Creative", "Optimistic", "Detail-oriented"],
+      "Irelynd has the creativity, the big ideas, and an eye for every little detail. She brings the fresh perspectives, the thoughtful touches, and a creative energy that makes every idea feel meaningful.",
+    traits: ["Creative", "Intentional", "Detail-oriented"],
   },
   {
     name: "Amelia",
