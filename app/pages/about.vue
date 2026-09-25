@@ -7,7 +7,7 @@ const founders = [
     imageWidth: 2832,
     imageHeight: 3868,
     description:
-      "Irelynd has the creativity, the big ideas, and an eye for every little detail. She brings the fresh perspectives, the thoughtful touches, and a creative energy that makes every idea feel meaningful.",
+      "Irelynd brings the creativity, the big ideas, and an eye for every little detail. Her fresh perspective, thoughtful touches, and creative energy make every idea feel meaningful.",
     traits: ["Creative", "Intentional", "Detail-oriented"],
   },
   {
