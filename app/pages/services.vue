@@ -26,7 +26,7 @@ const weddingServices: WeddingService[] = [
     class: "bg-hgreen-300",
   },
   {
-    title: "Partial Wedding Planning",
+    title: "Partial Planning",
     subtitle: "Expert guidance, every step of the way.",
     price: "$3,000+",
     includes: [
@@ -40,7 +40,7 @@ const weddingServices: WeddingService[] = [
     class: "bg-hblue-200",
   },
   {
-    title: "Full-Service Wedding Planning",
+    title: "Full-Service Planning",
     subtitle: "A fully personalized, stress-free experience.",
     price: "$8,000+",
     includes: [
