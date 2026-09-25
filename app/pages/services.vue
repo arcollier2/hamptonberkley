@@ -13,7 +13,7 @@ const weddingServices: WeddingService[] = [
   {
     title: "Day-Of Coordination",
     subtitle: "Let us handle the details, so you can be present.",
-    pricing: "1,000+",
+    price: "1,000+",
     includes: [
       "Final planning call 2–3 weeks before the event",
       "Vendor communication confirmation",
