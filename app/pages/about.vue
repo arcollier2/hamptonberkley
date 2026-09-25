@@ -157,13 +157,41 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
         </div>
       </section>
 
-      <section class="border-t border-default py-16 sm:py-20">
-        <h2 class="text-center font-serif text-4xl font-semibold sm:text-5xl">
-          Our Pillars
-        </h2>
+      <section class="border-t border-default py-16 sm:py-20 lg:py-24">
+        <div class="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
+          <img
+            src="/images/hug.jpg"
+            alt="Irelynd and Amelia smiling and hugging"
+            width="2832"
+            height="1618"
+            loading="lazy"
+            class="aspect-[1.35] w-full rounded-2xl object-cover shadow-sm sm:aspect-[1.55]"
+          />
 
-        <div class="relative mt-10 pb-24 sm:pb-32 lg:pb-16">
-          <div class="relative z-10 grid gap-4 lg:grid-cols-3">
+          <div class="max-w-xl">
+            <p class="text-xs font-semibold tracking-[0.24em] text-primary uppercase">
+              Philanthropy
+            </p>
+            <h2
+              class="mt-4 font-serif text-5xl leading-[0.95] font-semibold text-balance sm:text-6xl"
+            >
+              Creating Meaningful Change for Women
+            </h2>
+            <span class="mt-7 block h-px w-10 bg-hblue-300 dark:bg-hblue-700" />
+            <p class="mt-6 text-sm leading-6 text-muted sm:text-base">
+              We believe meaningful celebrations can create meaningful change. Through
+              philanthropy, we support women and the relationships, ideas, and
+              communities that help them thrive.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-20 sm:mt-24">
+          <h2 class="text-center font-serif text-4xl font-semibold sm:text-5xl">
+            Our Pillars
+          </h2>
+
+          <div class="mt-10 grid gap-4 lg:grid-cols-3">
             <article
               v-for="pillar in pillars"
               :key="pillar.title"
@@ -178,23 +206,6 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
               </p>
             </article>
           </div>
-
-          <figure
-            class="relative z-20 mx-auto -mt-3 w-[82%] max-w-xl rotate-2 rounded-sm bg-white p-2 shadow-xl sm:-mt-5 sm:w-[64%] lg:-mt-4 lg:mr-8 lg:w-[38%] lg:max-w-lg lg:rotate-3"
-          >
-            <span
-              aria-hidden="true"
-              class="absolute -top-3 left-1/2 h-7 w-24 -translate-x-1/2 -rotate-2 bg-hpink-100/90 shadow-sm"
-            />
-            <img
-              src="/images/hug.jpg"
-              alt="Irelynd and Amelia smiling and hugging"
-              width="2832"
-              height="1618"
-              loading="lazy"
-              class="aspect-[2832/1618] w-full object-cover"
-            />
-          </figure>
         </div>
       </section>
     </UContainer>
