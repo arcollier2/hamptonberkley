@@ -174,6 +174,7 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
       content="We’d love to learn more about your celebration and how we can support you. Let’s create a day that feels organized, meaningful, and beautifully hosted."
       button-text="Inquire now"
       button-to="/contact"
+      tone="blue"
     />
   </div>
 </template>

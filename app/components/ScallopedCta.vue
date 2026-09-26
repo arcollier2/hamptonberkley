@@ -19,24 +19,17 @@ const props = withDefaults(
   }
 )
 
-const randomTone = ref<ScallopedCtaTone>("pink")
-
-onMounted(() => {
-  const tones: ScallopedCtaTone[] = ["pink", "blue", "green"]
-  randomTone.value = tones[Math.floor(Math.random() * tones.length)] ?? "pink"
-})
-
-const selectedTone = computed(() => props.tone ?? randomTone.value)
+const selectedTone = computed(() => props.tone ?? "blue")
 
 const toneClasses: Record<ScallopedCtaTone, string> = {
   pink: "bg-hpink-200",
-  blue: "bg-hblue-200",
+  blue: "bg-hblue-500 text-white",
   green: "bg-hgreen-300",
 }
 
 const buttonClasses: Record<ScallopedCtaTone, string> = {
   pink: "bg-hblue-200 hover:bg-hblue-300",
-  blue: "bg-hgreen-300 hover:bg-hgreen-400",
+  blue: "bg-muted text-hblue-900 hover:bg-hblue-50 dark:bg-hblue-200 dark:hover:bg-hblue-100",
   green: "bg-hblue-200 hover:bg-hblue-300",
 }
 </script>
