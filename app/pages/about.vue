@@ -7,7 +7,7 @@ const founders = [
     imageWidth: 2832,
     imageHeight: 3868,
     description:
-      "Irelynd brings the creativity, the big ideas, and an eye for every little detail. Her fresh perspective, thoughtful touches, and creative energy make every idea feel meaningful.",
+      "Irelynd brings the creativity, the big ideas, and an eye for every little detail. A Butler University graduate with double majors in Accounting and Applied Business Technology, she pairs a thoughtful, strategic mindset with a natural creative energy. Most importantly, Irelynd is one of the most genuine and caring people you’ll meet. She is warm, welcoming, and intentional in every relationship. She also brings fresh perspective and thoughtful touches to every project, making every idea feel personal, meaningful, and uniquely yours.",
     traits: ["Creative", "Intentional", "Detail-oriented"],
   },
   {
@@ -17,8 +17,8 @@ const founders = [
     imageWidth: 2832,
     imageHeight: 4240,
     description:
-      "Amelia keeps us grounded, organized, and always thinking ahead. She brings the balance, the strategy, and a calm confidence that makes everything feel possible.",
-    traits: ["Organized", "Thoughtful", "Always a plan"],
+      "Amelia keeps us grounded, organized, and always thinking ahead. A Butler University graduate with a degree in Entrepreneurship and Innovation, she brings a natural ability to turn ideas into plans and plans into action. She’s a problem-solver at heart, always thinking through the details, finding solutions, and making sure nothing falls through the cracks. With her calm confidence, strategic mindset, and get-it-done energy, Amelia brings the balance and structure that makes everything feel possible.",
+    traits: ["Organized", "Thoughtful", "Probem-Solver"],
   },
 ]
 
