@@ -128,11 +128,11 @@ body {
   mask-image: url("/images/scallop-tile-edge.png");
   mask-position: center top;
   mask-repeat: round no-repeat;
-  mask-size: 47px 48px;
+  mask-size: 72px 48px;
   -webkit-mask-image: url("/images/scallop-tile-edge.png");
   -webkit-mask-position: center top;
   -webkit-mask-repeat: round no-repeat;
-  -webkit-mask-size: 47px 48px;
+  -webkit-mask-size: 72px 48px;
 }
 
 .scalloped-paper__fill::before {

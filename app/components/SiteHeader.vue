@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const links = [
   { label: "Home", to: "/" },
-  { label: "Services", to: "/services" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Vendors", to: "/vendors" },
   { label: "About", to: "/about" },
+  { label: "Services", to: "/services" },
+  { label: "Vendors", to: "/vendors" },
+  { label: "Gallery", to: "/gallery" },
 ]
 </script>
 
