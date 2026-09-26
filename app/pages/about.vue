@@ -189,13 +189,13 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
             <article
               v-for="pillar in pillars"
               :key="pillar.title"
-              class="flex min-h-80 flex-col items-center justify-center rounded-xl bg-hblue-500 px-7 py-10 text-center text-white shadow-sm sm:px-10"
+              class="flex min-h-80 flex-col items-center justify-center rounded-xl bg-[#9bb2cc] px-7 py-10 text-center text-hcharcoal-900 shadow-sm sm:px-10"
             >
               <h3 class="max-w-sm font-serif text-3xl leading-tight font-semibold">
                 {{ pillar.title }}
               </h3>
-              <span class="mt-6 block h-px w-16 bg-hblue-200" />
-              <p class="mt-6 max-w-sm text-base leading-7 text-hblue-50">
+              <span class="mt-6 block h-px w-16 bg-hcharcoal-900/30" />
+              <p class="mt-6 max-w-sm text-base leading-7 text-hcharcoal-800">
                 {{ pillar.description }}
               </p>
             </article>
