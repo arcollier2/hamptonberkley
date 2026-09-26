@@ -5,7 +5,7 @@ const pages = [
   { path: "/services", heading: "Wedding and event planning services" },
   { path: "/service/wedding-coordination", heading: "Wedding Coordination" },
   { path: "/gallery", heading: "The gallery" },
-  { path: "/about", heading: "Two roommates. Two streets. One big dream." },
+  { path: "/about", heading: "Where it Began" },
   { path: "/vendors", heading: "Trusted Creatives for Meaningful Moments" },
   { path: "/contact", heading: "Let’s begin with your story." },
 ]
