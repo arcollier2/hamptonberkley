@@ -66,40 +66,34 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
             Our story
           </p>
           <h1
-            class="mt-4 max-w-xl font-serif text-5xl leading-[0.95] font-semibold text-balance sm:text-6xl"
+            class="mt-4 max-w-xl font-serif text-4xl leading-[0.95] font-semibold text-balance sm:text-5xl"
           >
-            Two roommates.<br />
-            Two streets.<br />
-            One big dream.
+            Where it Began
           </h1>
 
           <div
             class="mt-7 max-w-xl space-y-5 text-sm leading-6 text-muted sm:text-base"
           >
             <p>
-              Hampton Berkley started with Irelynd and Amelia — two college roommates
-              who spent three years living life side by side. Our home was on Hampton
-              Drive and Berkley Road, and somewhere between late nights, getting ready
-              together, and dreaming about what was next, those two streets became a
-              little piece of our story.
+              Hampton Berkley started with Irelynd and Amelia, two college roommates who
+              quickly became close friends. During college, Hampton Drive and Berkley
+              Road became familiar places in a chapter of life we shared, and
+              eventually, they became the inspiration for something of our own.
             </p>
             <p>
-              When it came time to create something of our own, we knew we wanted it to
-              feel personal. Something that reflected the things we love, the people we
-              love, and the meaningful moments that bring people together.
+              The idea for Hampton Berkley came from that shared time, but also from a
+              simple love for bringing people together. We wanted to create something
+              that felt thoughtful and personal, with an appreciation for the details
+              that make an occasion feel like your own.
             </p>
             <p>
-              So, we brought our two favorite streets together and Hampton Berkley was
-              born.
+              The name is a small piece of our story. Two places that were part of our
+              lives, now brought together in something we get to build together.
             </p>
+            <p>And that's where Hampton Berkley began.</p>
           </div>
 
           <span class="mt-7 block h-px w-10 bg-hblue-300 dark:bg-hblue-700" />
-          <p
-            class="mt-5 text-[0.65rem] font-semibold tracking-[0.22em] text-toned uppercase"
-          >
-            Same streets. Brighter days.
-          </p>
         </div>
 
         <img
