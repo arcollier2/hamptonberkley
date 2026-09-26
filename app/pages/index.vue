@@ -135,7 +135,7 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
       </section>
     </section>
 
-    <UContainer class="py-24 sm:py-32">
+    <UContainer class="py-16 sm:py-20">
       <section>
         <SectionDivider
           label="Our services"

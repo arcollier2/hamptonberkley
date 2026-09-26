@@ -1,11 +1,11 @@
 <script setup lang="ts">
 const links = [
   { label: "Home", to: "/" },
-  { label: "Services", to: "/services" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Vendors", to: "/vendors" },
   { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Services", to: "/services" },
+  { label: "Vendors", to: "/vendors" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Inquire", to: "/contact" },
 ]
 
 const year = new Date().getFullYear()
@@ -51,15 +51,35 @@ const year = new Date().getFullYear()
               {{ link.label }}
             </NuxtLink>
           </nav>
-          <a
-            href="https://www.instagram.com/hamptonberkleyco"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 text-xs text-toned hover:text-primary"
-          >
-            <UIcon name="i-lucide-instagram" class="size-4" />
-            @hamptonberkleyco
-          </a>
+          <div class="flex flex-wrap justify-center gap-2">
+            <a
+              href="https://www.instagram.com/hamptonberkleyco"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="flex size-9 items-center justify-center rounded-full border border-default text-toned transition-colors hover:border-primary hover:text-primary"
+            >
+              <UIcon name="i-lucide-instagram" class="size-4" />
+            </a>
+            <a
+              href="https://www.pinterest.com/hamptonberkley/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pinterest"
+              class="flex size-9 items-center justify-center rounded-full border border-default text-xs font-semibold text-toned transition-colors hover:border-primary hover:text-primary"
+            >
+              P
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61594835392511"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="flex size-9 items-center justify-center rounded-full border border-default text-xs font-semibold text-toned transition-colors hover:border-primary hover:text-primary"
+            >
+              f
+            </a>
+          </div>
         </div>
 
         <div class="md:text-right">
@@ -67,10 +87,6 @@ const year = new Date().getFullYear()
             class="text-[0.65rem] font-semibold tracking-[0.18em] text-toned uppercase"
           >
             Serving Northern Indiana<br />+ Greater Indianapolis
-          </p>
-          <p class="mt-3 text-xs leading-5 text-muted">
-            Events with intention.<br />
-            People at the center. Always.
           </p>
         </div>
       </div>
