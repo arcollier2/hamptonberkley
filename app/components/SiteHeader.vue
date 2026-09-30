@@ -4,7 +4,6 @@ const links = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Vendors", to: "/vendors" },
-  { label: "Gallery", to: "/gallery" },
 ]
 </script>
 

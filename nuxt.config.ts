@@ -5,6 +5,8 @@ const siteUrl = process.env.NUXT_PUBLIC_SITE_URL ?? "https://hamptonberkley.com"
 export default defineNuxtConfig({
   compatibilityDate: "2026-09-18",
   devtools: { enabled: true },
+  // Keep the gallery source for restoration without registering or generating its route.
+  ignore: ["**/pages/gallery.vue"],
   modules: [
     "@nuxt/content",
     "@nuxt/image",

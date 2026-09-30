@@ -19,6 +19,17 @@ serves those assets and runs `workers/contact-api.ts` first for `/api/*`.
 Gallery entries require `title`, `description`, `image`, and `imageAlt`. Optional
 fields are `location` and `services`; `order` controls display order.
 
+The gallery is temporarily unavailable. `nuxt.config.ts` ignores
+`app/pages/gallery.vue`, so no gallery route or static HTML is generated and direct
+requests use the existing 404 handling. Its source, content, and images are retained;
+the service-page photo carousel remains visible without a gallery link. There is
+currently no sitemap configured.
+
+To restore the gallery, remove the gallery `ignore` entry in `nuxt.config.ts`, restore
+its links in `SiteHeader.vue` and `SiteFooter.vue`, and restore `to="/gallery"` on the
+gallery `SectionDivider` in `ServiceDetailLayout.vue`. Update the gallery smoke tests
+in `e2e/smoke.spec.ts` and regenerate the static site.
+
 ### Approved vendors
 
 Vendor files require `name` and a `categories` list. Categories must use IDs

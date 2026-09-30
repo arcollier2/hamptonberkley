@@ -150,7 +150,6 @@ function scrollGallery(direction: -1 | 1) {
         <SectionDivider
           :label="props.galleryLabel ?? 'A look at past events'"
           :link-label="props.galleryLinkLabel ?? 'Real moments. Lasting impressions.'"
-          to="/gallery"
           class="mb-7"
         />
 

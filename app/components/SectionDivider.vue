@@ -2,7 +2,7 @@
 defineProps<{
   label: string
   linkLabel: string
-  to: string
+  to?: string
 }>()
 </script>
 
@@ -18,6 +18,7 @@ defineProps<{
       aria-hidden="true"
     />
     <NuxtLink
+      v-if="to"
       :to="to"
       class="flex shrink-0 items-center gap-2 text-right text-[0.65rem] font-semibold tracking-[0.16em] text-toned uppercase hover:text-primary"
     >
