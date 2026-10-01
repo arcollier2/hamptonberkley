@@ -58,8 +58,8 @@ const weddingServices: WeddingService[] = [
 ]
 
 const bridalEvents = [
-  { name: "Bridal Showers", price: "$350" },
-  { name: "Engagement Party", price: "$300" },
+  { name: "Bridal Showers", price: "$300+" },
+  { name: "Engagement Party", price: "$300+" },
   { name: "Bachelorette Party Planning", price: "$500+" },
   { name: "Welcome Dinners", price: "$500+" },
   { name: "Rehearsal Dinners", price: "$500+" },
@@ -70,7 +70,7 @@ const corporateEvents = [
   { name: "Team-Building Experiences", price: "$500+" },
   { name: "Retreat Coordination", price: "$850+" },
   { name: "Elevated Private Gatherings", price: "$500+" },
-  { name: "Baby Showers", price: "$550+" },
+  { name: "Baby Showers", price: "$300+" },
 ]
 
 const canonicalUrl = new URL("/services", useSiteUrl()).toString()
