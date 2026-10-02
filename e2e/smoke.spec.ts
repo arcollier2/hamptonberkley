@@ -1,4 +1,24 @@
 import { expect, test } from "@playwright/test"
+import { readdirSync, readFileSync } from "node:fs"
+import { parse } from "yaml"
+
+const vendorDirectory = new URL("../content/vendors/", import.meta.url)
+const vendorNames = readdirSync(vendorDirectory)
+  .filter((file) => file.endsWith(".yml") && file !== "aaa-categories.yml")
+  .map((file) => {
+    const vendor: unknown = parse(readFileSync(new URL(file, vendorDirectory), "utf8"))
+    if (
+      typeof vendor !== "object" ||
+      vendor === null ||
+      !("name" in vendor) ||
+      typeof vendor.name !== "string" ||
+      !vendor.name.trim()
+    ) {
+      throw new Error(`Missing vendor name in ${file}`)
+    }
+    return vendor.name
+  })
+  .sort()
 
 const pages = [
   { path: "/", heading: "Intentional Gatherings, Genuinely Made" },
@@ -44,11 +64,18 @@ test("mobile navigation omits the gallery", async ({ page }) => {
   await expect(menu.getByRole("link", { name: "Gallery", exact: true })).toHaveCount(0)
 })
 
-test("vendors All view includes an approved vendor", async ({ page }) => {
+test("vendors All view matches the current approved vendor files", async ({ page }) => {
   await page.goto("/vendors")
 
-  await expect(page.getByRole("heading", { name: "The Petal Theory" })).toBeVisible()
-  await expect(page.getByText("Florists", { exact: true }).last()).toBeVisible()
+  await expect
+    .poll(async () => (await page.locator("article h2").allTextContents()).sort())
+    .toEqual(vendorNames)
+
+  if (!vendorNames.length) {
+    await expect(
+      page.getByText("Vendor recommendations for this category are coming soon.")
+    ).toBeVisible()
+  }
 })
 
 test("header navigation exposes every primary route", async ({ page }) => {

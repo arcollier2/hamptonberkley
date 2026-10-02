@@ -66,6 +66,12 @@ CI checks YAML formatting, validates the typed Nuxt Content schema, generates
 the static site, and runs browser smoke tests before `main` can be promoted to
 `prod`. Run `bun run lint:yaml` locally to check vendor YAML formatting.
 
+To remove a vendor, delete its YAML file. The vendor smoke test compares the
+rendered list with the current YAML files, so additions and deletions do not
+require editing a hard-coded vendor expectation. Changes become live only after
+CI succeeds and the resulting static site is deployed to Cloudflare; promotion
+to `prod` alone does not confirm deployment.
+
 ## Contact form and D1
 
 The contact form posts JSON to `/api/contact`. The Worker validates the payload
