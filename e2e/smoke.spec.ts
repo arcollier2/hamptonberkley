@@ -72,6 +72,7 @@ for (const path of [
       if (!descriptionBounds || !buttonBounds || !ctaBounds) {
         throw new Error("Missing planning CTA layout bounds")
       }
+      expect(buttonBounds.width).toBeLessThan(240)
       expect(buttonBounds.y).toBeGreaterThan(
         descriptionBounds.y + descriptionBounds.height
       )

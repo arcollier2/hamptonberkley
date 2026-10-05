@@ -59,7 +59,7 @@ const buttonClasses: Record<ScallopedCtaTone, string> = {
           :to="props.buttonTo"
           size="xl"
           color="neutral"
-          class="w-full max-w-xs justify-self-center px-10 tracking-[0.14em] text-hcharcoal-950 uppercase"
+          class="w-auto max-w-full justify-self-center px-8 tracking-[0.14em] text-hcharcoal-950 uppercase"
           :class="buttonClasses[selectedTone]"
         >
           {{ props.buttonText }}
