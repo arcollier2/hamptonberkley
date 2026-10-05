@@ -26,17 +26,17 @@ const pillars = [
   {
     title: "Care for Women",
     description:
-      "We support initiatives that provide women with access to essential resources, health services, and opportunities for full autonomy.",
+      "We support access to health care and everyday essentials so women can feel cared for and make their own choices.",
   },
   {
     title: "Supporting Healthy Relationships",
     description:
-      "We invest in programs and resources that strengthen relationships — from families to communities.",
+      "We support programs that help people build caring, healthy relationships with their partners, families, and communities.",
   },
   {
     title: "Women in Entrepreneurship",
     description:
-      "We champion women in entrepreneurship by supporting access to capital, mentorship, and resources that help them build and grow.",
+      "We help women turn their ideas into businesses by supporting access to funding, mentorship, and practical tools to grow.",
   },
 ]
 
@@ -114,7 +114,7 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
         />
       </section>
 
-      <section class="py-16 sm:py-20">
+      <section class="pt-8 pb-16 sm:pt-10 sm:pb-20">
         <header class="text-center">
           <p class="text-xs font-semibold tracking-[0.24em] text-primary uppercase">
             Meet the founders
@@ -181,9 +181,11 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
             </h2>
             <span class="mt-7 block h-px w-10 bg-hblue-300 dark:bg-hblue-700" />
             <p class="mt-6 text-sm leading-6 text-muted sm:text-base">
-              We believe meaningful celebrations can create meaningful change. Through
-              philanthropy, we support women and the relationships, ideas, and
-              communities that help them thrive.
+              We believe meaningful celebrations can create meaningful change. That’s
+              why a portion of our profits is dedicated to supporting women and the
+              relationships, ideas, and communities that help them thrive. Through
+              intentional giving, we’re proud to invest in the causes and pillars that
+              matter most to us.
             </p>
           </div>
         </div>
@@ -197,13 +199,13 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
             <article
               v-for="pillar in pillars"
               :key="pillar.title"
-              class="flex min-h-80 flex-col items-center justify-center rounded-xl bg-[#9bb2cc] px-7 py-10 text-center text-hcharcoal-900 shadow-sm sm:px-10"
+              class="flex min-h-80 flex-col items-center justify-center rounded-xl bg-hblue-500 px-7 py-10 text-center text-white shadow-sm sm:px-10"
             >
               <h3 class="max-w-sm font-serif text-3xl leading-tight font-semibold">
                 {{ pillar.title }}
               </h3>
-              <span class="mt-6 block h-px w-16 bg-hcharcoal-900/30" />
-              <p class="mt-6 max-w-sm text-base leading-7 text-hcharcoal-800">
+              <span class="mt-6 block h-px w-16 bg-white/30" />
+              <p class="mt-6 max-w-sm text-base leading-7">
                 {{ pillar.description }}
               </p>
             </article>
