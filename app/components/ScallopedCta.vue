@@ -3,15 +3,19 @@ type ScallopedCtaTone = "pink" | "blue" | "green"
 
 const props = withDefaults(
   defineProps<{
-    eyebrow: string
-    heading: string
-    content: string
+    eyebrow?: string
+    heading?: string
+    content?: string
     buttonText?: string
     buttonTo?: string
     showButton?: boolean
     tone?: ScallopedCtaTone
   }>(),
   {
+    eyebrow: "Let’s create something meaningful",
+    heading: "Ready to Start Planning?",
+    content:
+      "We’d love to learn more about your event and how we can bring your vision to life.",
     buttonText: "Inquire now",
     buttonTo: "/contact",
     showButton: true,
@@ -37,18 +41,15 @@ const buttonClasses: Record<ScallopedCtaTone, string> = {
 <template>
   <section class="scalloped-paper text-hcharcoal-900">
     <div class="scalloped-paper__fill" :class="toneClasses[selectedTone]">
-      <UContainer
-        class="grid items-center gap-6 px-6 text-center sm:px-12"
-        :class="{ 'lg:grid-cols-[1fr_auto] lg:text-left': props.showButton }"
-      >
-        <div :class="{ 'lg:text-center': props.showButton }">
-          <p class="text-[0.65rem] font-semibold tracking-[0.22em] uppercase">
+      <UContainer class="grid items-center gap-8 px-6 py-4 text-center sm:px-12">
+        <div>
+          <p class="text-xs font-semibold tracking-[0.22em] uppercase sm:text-sm">
             {{ props.eyebrow }}
           </p>
-          <h2 class="mt-2 font-serif text-3xl font-semibold sm:text-4xl">
+          <h2 class="mt-3 font-serif text-3xl font-semibold sm:text-5xl">
             {{ props.heading }}
           </h2>
-          <p class="mx-auto mt-2 max-w-2xl text-sm leading-6">
+          <p class="mx-auto mt-4 max-w-4xl text-base leading-7 sm:text-lg">
             {{ props.content }}
           </p>
         </div>
@@ -58,7 +59,7 @@ const buttonClasses: Record<ScallopedCtaTone, string> = {
           :to="props.buttonTo"
           size="xl"
           color="neutral"
-          class="justify-self-center px-10 tracking-[0.14em] text-hcharcoal-950 uppercase lg:justify-self-end"
+          class="w-full max-w-xs justify-self-center px-10 tracking-[0.14em] text-hcharcoal-950 uppercase"
           :class="buttonClasses[selectedTone]"
         >
           {{ props.buttonText }}

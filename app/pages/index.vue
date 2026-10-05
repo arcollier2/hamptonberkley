@@ -13,7 +13,7 @@ const services = [
   {
     title: "Social Events",
     items: [
-      "Engagement Parties",
+      "Birthday Celebrations",
       "Baby Showers",
       "Private Gatherings",
       "Milestone Celebrations",
@@ -62,9 +62,10 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
               Intentional Gatherings, Genuinely Made
             </h1>
             <p class="mt-6 max-w-lg leading-7 text-muted">
-              Thoughtfully planned, beautifully designed events that bring people
-              together. From “I do” to corporate gatherings and everything in between,
-              we make your vision a reality.
+              Thoughtfully planned and beautifully designed events that feel personal,
+              effortless, and meaningful. From intimate celebrations to corporate
+              gatherings and everything in between, we’re here to bring your vision to
+              life and create an experience worth remembering.
             </p>
             <div class="mt-8">
               <UButton
@@ -168,13 +169,6 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
       </section>
     </UContainer>
 
-    <ScallopedCta
-      eyebrow="Let’s create something meaningful"
-      heading="Ready to Plan a More Present Day?"
-      content="We’d love to learn more about your celebration and how we can support you. Let’s create a day that feels organized, meaningful, and beautifully hosted."
-      button-text="Inquire now"
-      button-to="/contact"
-      tone="blue"
-    />
+    <ScallopedCta />
   </div>
 </template>
