@@ -1,71 +1,16 @@
 <script setup lang="ts">
-const pricing = [
-  {
-    title: "Intimate Celebrations",
-    eyebrow: "0–150 guests",
-    price: "$1,000+",
-    features: [
-      "Final planning call 3–4 weeks before the event",
-      "Vendor communication confirmation",
-      "Wedding timeline management",
-    ],
-    tone: "green" as const,
-  },
-  {
-    title: "Classic Celebrations",
-    eyebrow: "150–300 guests",
-    price: "$1,500+",
-    features: [
-      "Day-before planning and execution",
-      "Day-of execution and troubleshooting",
-      "Ceremony and reception coordination",
-    ],
-    tone: "blue" as const,
-  },
-  {
-    title: "Grand Celebrations",
-    eyebrow: "300–450+ guests",
-    price: "$2,000+",
-    features: [
-      "Expanded vendor coordination",
-      "Detailed guest-flow planning",
-      "Additional logistics support for a larger celebration",
-    ],
-    tone: "pink" as const,
-  },
-]
-
-const addOns = [
-  { label: "Rehearsal coordination", icon: "i-lucide-calendar-check" },
-  { label: "Additional planning meetings", icon: "i-lucide-messages-square" },
-  { label: "Travel support", icon: "i-lucide-car" },
-  { label: "Additional coordinator", icon: "i-lucide-users" },
-]
-
 const gallery = [
   {
-    src: "/images/gallery-placeholder-garden.svg",
-    alt: "Placeholder for an outdoor wedding coordination gallery photo",
+    src: "/images/wedding-reception-gold-place-setting.jpg",
+    alt: "Wedding reception place setting with a gold charger, green stationery, and white flowers",
   },
   {
-    src: "/images/gallery-placeholder-dinner.svg",
-    alt: "Placeholder for a reception coordination gallery photo",
+    src: "/images/wedding-ceremony-white-floral-aisle.jpg",
+    alt: "Guests standing beside a white-flower-lined aisle during an indoor wedding ceremony",
   },
   {
-    src: "/images/gallery-placeholder-garden.svg",
-    alt: "Placeholder for a wedding ceremony coordination gallery photo",
-  },
-  {
-    src: "/images/gallery-placeholder-dinner.svg",
-    alt: "Placeholder for a wedding tablescape coordination gallery photo",
-  },
-  {
-    src: "/images/gallery-placeholder-garden.svg",
-    alt: "Placeholder for a wedding party coordination gallery photo",
-  },
-  {
-    src: "/images/gallery-placeholder-dinner.svg",
-    alt: "Placeholder for an evening wedding reception gallery photo",
+    src: "/images/wedding-reception-florals-string-lights.jpg",
+    alt: "Wedding reception room with round tables, white floral centerpieces, and string lights",
   },
 ]
 
@@ -88,24 +33,23 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
   <ServiceDetailLayout
     category="Wedding services"
     title="Wedding Coordination"
-    summary="You planned the celebration. We’ll make sure every thoughtful detail comes together so you can be fully present for it."
-    content-heading="Calm coordination for a day centered on you."
-    :content="[
-      'In the final weeks before your wedding, we step in to organize the moving pieces, confirm the details, and become the central point of contact for your vendor team.',
-      'From the rehearsal through the final reception moment, we manage the timeline, transitions, and unexpected details with a steady presence—giving you and your people space to celebrate.',
-    ]"
+    summary="We thoughtfully manage the timeline, transitions, and behind-the-scenes details so your event feels seamless and effortless. With a steady presence throughout the day, we give you the freedom to be present, enjoy every moment, and celebrate with the people who matter most."
     :content-image="{
-      src: '/images/gallery-placeholder-garden.svg',
-      alt: 'Placeholder for wedding coordination photography',
+      src: '/images/wedding-coordination-director-chairs.jpg',
+      alt: 'Two women seated together in director chairs in front of light curtains',
+      width: 1069,
+      height: 1600,
     }"
-    :pricing="pricing"
-    :add-ons="addOns"
+    content-heading="Intentional Gatherings, Genuinely Made"
+    :content="[
+      'In the weeks leading up to your wedding, we step in to bring all the details together. We’ll confirm the plans, connect with your vendors, and make sure everyone knows what to expect. On your wedding day, we’re there to keep everything moving smoothly, handle the little things that come up, and give you the freedom to be fully present with the people you love.',
+    ]"
     :gallery="gallery"
     gallery-label="A look at coordinated weddings"
     gallery-link-label="Present moments. Thoughtful details."
-    cta-eyebrow="Let’s create something meaningful"
-    cta-heading="Ready to Be Present for Your Day?"
-    cta-content="We’d love to learn more about your wedding and how calm, thoughtful coordination can support your celebration."
-    cta-button-text="Inquire now"
-  />
+  >
+    <template #after-content>
+      <CoordinationServices />
+    </template>
+  </ServiceDetailLayout>
 </template>

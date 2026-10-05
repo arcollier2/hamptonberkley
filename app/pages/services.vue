@@ -58,19 +58,19 @@ const weddingServices: WeddingService[] = [
 ]
 
 const bridalEvents = [
-  { name: "Bridal Showers", price: "$300+" },
-  { name: "Engagement Party", price: "$300+" },
-  { name: "Bachelorette Party Planning", price: "$500+" },
-  { name: "Welcome Dinners", price: "$500+" },
-  { name: "Rehearsal Dinners", price: "$500+" },
+  "Bridal Showers",
+  "Engagement Party",
+  "Bachelorette Party Planning",
+  "Welcome Dinners",
+  "Rehearsal Dinners",
 ]
 
 const corporateEvents = [
-  { name: "Executive Dinners", price: "$500+" },
-  { name: "Team-Building Experiences", price: "$500+" },
-  { name: "Retreat Coordination", price: "$850+" },
-  { name: "Elevated Private Gatherings", price: "$500+" },
-  { name: "Baby Showers", price: "$300+" },
+  "Executive Dinners",
+  "Team-Building Experiences",
+  "Retreat Coordination",
+  "Elevated Private Gatherings",
+  "Baby Showers",
 ]
 
 const canonicalUrl = new URL("/services", useSiteUrl()).toString()
@@ -253,16 +253,12 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
                 Celebrate every chapter.
               </p>
               <span class="mt-5 block h-px w-10 bg-current opacity-40" />
-              <dl class="mt-6 divide-y divide-hcharcoal-50/20 text-sm">
-                <div
-                  v-for="event in bridalEvents"
-                  :key="event.name"
-                  class="flex justify-between gap-4 py-2"
-                >
-                  <dt>{{ event.name }}</dt>
-                  <dd class="font-semibold">{{ event.price }}</dd>
-                </div>
-              </dl>
+              <p class="mt-7 font-serif text-3xl font-semibold">$300+</p>
+              <ul class="mt-6 divide-y divide-hcharcoal-50/20 text-sm">
+                <li v-for="event in bridalEvents" :key="event" class="py-2">
+                  {{ event }}
+                </li>
+              </ul>
               <NuxtLink
                 to="/contact"
                 class="mt-auto flex items-center gap-2 pt-7 text-xs font-semibold tracking-[0.14em] uppercase"
@@ -292,16 +288,12 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
                 Meaningful gatherings for every occasion.
               </p>
               <span class="mt-5 block h-px w-10 bg-current opacity-40" />
-              <dl class="mt-6 divide-y divide-hcharcoal-900/15 text-sm">
-                <div
-                  v-for="event in corporateEvents"
-                  :key="event.name"
-                  class="flex justify-between gap-4 py-2"
-                >
-                  <dt>{{ event.name }}</dt>
-                  <dd class="font-semibold">{{ event.price }}</dd>
-                </div>
-              </dl>
+              <p class="mt-7 font-serif text-3xl font-semibold">$450+</p>
+              <ul class="mt-6 divide-y divide-hcharcoal-900/15 text-sm">
+                <li v-for="event in corporateEvents" :key="event" class="py-2">
+                  {{ event }}
+                </li>
+              </ul>
               <p class="mt-5 font-serif text-lg italic">
                 Got a fun event coming up? We can do it all! Reach out for a quote.
               </p>
@@ -326,12 +318,6 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
       </section>
     </UContainer>
 
-    <ScallopedCta
-      eyebrow="Let’s create something meaningful"
-      heading="Ready to Start Planning?"
-      content="We’d love to learn more about your event and how we can bring your vision to life."
-      button-text="Inquire now"
-      button-to="/contact"
-    />
+    <ScallopedCta />
   </div>
 </template>

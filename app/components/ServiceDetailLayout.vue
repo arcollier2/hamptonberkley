@@ -23,15 +23,15 @@ const props = defineProps<{
   summary: string
   contentHeading: string
   content: string[]
-  contentImage?: GalleryImage
-  pricing: PriceOption[]
+  contentImage?: GalleryImage & { width?: number; height?: number }
+  pricing?: PriceOption[]
   addOns?: AddOn[]
   gallery?: GalleryImage[]
   galleryLabel?: string
   galleryLinkLabel?: string
-  ctaEyebrow: string
-  ctaHeading: string
-  ctaContent: string
+  ctaEyebrow?: string
+  ctaHeading?: string
+  ctaContent?: string
   ctaButtonText?: string
 }>()
 
@@ -62,7 +62,7 @@ function scrollGallery(direction: -1 | 1) {
         <span>{{ props.title }}</span>
       </nav>
 
-      <header class="max-w-5xl pt-10 sm:pt-14">
+      <header class="pt-10 sm:pt-14">
         <p class="text-xs font-semibold tracking-[0.24em] text-primary uppercase">
           {{ props.category }}
         </p>
@@ -95,14 +95,16 @@ function scrollGallery(direction: -1 | 1) {
           v-if="props.contentImage"
           :src="props.contentImage.src"
           :alt="props.contentImage.alt"
-          width="1200"
-          height="800"
+          :width="props.contentImage.width ?? 1200"
+          :height="props.contentImage.height ?? 800"
           loading="lazy"
-          class="aspect-[3/2] size-full rounded-xl object-cover shadow-sm"
+          class="aspect-[3/2] w-full rounded-xl object-cover object-center shadow-sm"
         />
       </section>
 
-      <section class="mt-16 sm:mt-20">
+      <slot name="after-content" />
+
+      <section v-if="props.pricing?.length" class="mt-16 sm:mt-20">
         <div class="grid gap-4 lg:grid-cols-3">
           <article
             v-for="option in props.pricing"
@@ -145,8 +147,18 @@ function scrollGallery(direction: -1 | 1) {
           </li>
         </ul>
       </section>
+    </UContainer>
 
-      <section v-if="props.gallery?.length" class="mt-16 sm:mt-20">
+    <ScallopedCta
+      :eyebrow="props.ctaEyebrow"
+      :heading="props.ctaHeading"
+      :content="props.ctaContent"
+      :button-text="props.ctaButtonText"
+      button-to="/contact"
+    />
+
+    <UContainer v-if="props.gallery?.length" class="py-12 sm:py-16">
+      <section>
         <SectionDivider
           :label="props.galleryLabel ?? 'A look at past events'"
           :link-label="props.galleryLinkLabel ?? 'Real moments. Lasting impressions.'"
@@ -190,13 +202,5 @@ function scrollGallery(direction: -1 | 1) {
         </div>
       </section>
     </UContainer>
-
-    <ScallopedCta
-      :eyebrow="props.ctaEyebrow"
-      :heading="props.ctaHeading"
-      :content="props.ctaContent"
-      :button-text="props.ctaButtonText"
-      button-to="/contact"
-    />
   </div>
 </template>

@@ -212,12 +212,6 @@ useHead({ link: [{ rel: "canonical", href: canonicalUrl }] })
       </section>
     </UContainer>
 
-    <ScallopedCta
-      eyebrow="Let’s create something meaningful"
-      heading="Ready to Plan a More Present Day?"
-      content="We’d love to learn more about your celebration and how we can support you. Let’s create a day that feels organized, meaningful, and beautifully hosted."
-      button-text="Inquire now"
-      button-to="/contact"
-    />
+    <ScallopedCta />
   </div>
 </template>
