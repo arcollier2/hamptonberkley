@@ -22,7 +22,7 @@ const weddingServices: WeddingService[] = [
       "Day-of execution and troubleshooting",
       "Ceremony and reception coordination",
     ],
-    cta: "Let’s make it happen",
+    cta: "Learn more",
     class: "bg-hgreen-300",
   },
   {
@@ -36,7 +36,7 @@ const weddingServices: WeddingService[] = [
       "Budget guidance",
       "Event logistics support",
     ],
-    cta: "Learn more",
+    cta: "Let’s make it happen",
     class: "bg-hblue-200",
   },
   {
